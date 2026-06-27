@@ -1,0 +1,21 @@
+[general]
+import = [
+    "~/.config/alacritty/themes/themes/linux.toml"
+]
+
+[window]
+padding = { x = 4, y = 4 }
+opacity = 0.95
+
+[font]
+size = 8
+
+[font.normal]
+family = "Iosevka Nerd Font Mono"
+style = "Bold"
+
+[cursor]
+style = { shape = "Beam", blinking = "On" }
+
+[scrolling]
+history = 10000
