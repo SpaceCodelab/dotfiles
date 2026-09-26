@@ -4,18 +4,31 @@ import = [
 ]
 
 [window]
-padding = { x = 4, y = 4 }
-opacity = 0.95
+# padding = { x = 4, y = 4 }
+opacity = 1
 
 [font]
-size = 8
+size = 12
 
 [font.normal]
-family = "Iosevka Nerd Font Mono"
+family = "Iosevka Term"
+style = "Medium"
+
+[font.bold]
+family = "Iosevka Term"
 style = "Bold"
+
+[font.italic]
+family = "Iosevka Term"
+style = "Italic"
+
+[font.bold_italic]
+family = "Iosevka Term"
+style = "Bold Italic"
 
 [cursor]
 style = { shape = "Beam", blinking = "On" }
 
 [scrolling]
 history = 10000
+
