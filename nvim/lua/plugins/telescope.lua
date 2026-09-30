@@ -1,60 +1,91 @@
+-- Telescope: fuzzy finding and file navigation
 return {
-    "nvim-telescope/telescope.nvim",
+	-- File icons
+	{
+		"nvim-tree/nvim-web-devicons",
+		opts = {},
+	},
 
-    dependencies = {
-        "nvim-lua/plenary.nvim",
-        "ThePrimeagen/harpoon",
-    },
+	-- Telescope
+	{
+		"nvim-telescope/telescope.nvim",
+		version = "*",
 
-    config = function()
-        require('telescope').setup({
-            defaults = {
-                layout_config = {
-                    horizontal = {
-                        preview_cutoff = 1,
-                        width = 0.6,
-                        height = 0.6,
-                    },
-                },
-            },
-        })
+		dependencies = {
+			"nvim-lua/plenary.nvim",
 
-        require("telescope").load_extension("harpoon")
+			{
+				"nvim-telescope/telescope-fzf-native.nvim",
+				build = "make",
+			},
+		},
 
-        local preview_utils = require("telescope.previewers.utils")
-        preview_utils.ts_highlighter = function(bufnr, ft)
-            local lang = vim.treesitter.language.get_lang(ft) or ft
-            if not lang or lang == "" then
-                return false
-            end
+		config = function()
+			require("telescope").setup({})
 
-            return pcall(vim.treesitter.start, bufnr, lang)
-        end
+			local preview_utils = require("telescope.previewers.utils")
 
-        local builtin = require('telescope.builtin')
+			preview_utils.ts_highlighter = function(bufnr, ft)
+				local lang = vim.treesitter.language.get_lang(ft) or ft
 
-        local function search_opts(extra)
-            return vim.tbl_extend("force", {
-                cwd = require("telescope.utils").buffer_dir(),
-                hidden = true,
-            }, extra or {})
-        end
+				if not lang or lang == "" then
+					return false
+				end
 
-        vim.keymap.set('n', '<leader>ff', function()
-            builtin.find_files(search_opts({
-                find_command = { "rg", "--files", "--color", "never", "--glob", "!.git" },
-                previewer = false,
-            }))
-        end, { desc = "Find files" })
+				return pcall(vim.treesitter.start, bufnr, lang)
+			end
+		end,
 
-        vim.keymap.set('n', '<leader>gf', function()
-            builtin.git_files(search_opts({ show_untracked = true, previewer = false }))
-        end, { desc = "Git files" })
+		keys = {
+			{
+				"<leader>ff",
+				"<cmd>Telescope find_files<cr>",
+				desc = "Find Files",
+			},
 
-        vim.keymap.set('n', '<leader>ps', function()
-            builtin.live_grep(search_opts())
-        end, { desc = "Live grep" })
+			{
+				"<leader>gf",
+				"<cmd>Telescope git_files<cr>",
+				desc = "Git Files",
+			},
 
-        vim.keymap.set('n', '<leader>fh', builtin.help_tags, { desc = "Help tags" })
-    end
+			{
+				"<leader>pws",
+				function()
+					local word = vim.fn.expand("<cword>")
+					require("telescope.builtin").grep_string({
+						search = word,
+					})
+				end,
+				desc = "Grep Word",
+			},
+
+			{
+				"<leader>pWs",
+				function()
+					local word = vim.fn.expand("<cWORD>")
+					require("telescope.builtin").grep_string({
+						search = word,
+					})
+				end,
+				desc = "Grep WORD",
+			},
+
+			{
+				"<leader>ps",
+				function()
+					require("telescope.builtin").grep_string({
+						search = vim.fn.input("Grep > "),
+					})
+				end,
+				desc = "Grep String",
+			},
+
+			{
+				"<leader>vh",
+				"<cmd>Telescope help_tags<cr>",
+				desc = "Help Tags",
+			},
+		},
+	},
 }
