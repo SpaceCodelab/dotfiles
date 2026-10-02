@@ -16,27 +16,7 @@ return {
 				styles = { bold = true, italic = true, underline = true },
 			})
             ColorMyPencils()
-			vim.cmd.colorscheme("darkrose")
 		end,
 	}, 
-    --[[{
-    "rose-pine/neovim",
-    name = "rose-pine",
-    lazy = false,
-    priority = 1000,
 
-    opts = {
-      variant = "auto",
-      dark_variant = "moon",
-
-      styles = {
-        italic = false,
-      },
-    },
-
-    config = function(_, opts)
-      require("rose-pine").setup(opts)
-      ColorMyPencils()
-    end,
-  },]]
 }

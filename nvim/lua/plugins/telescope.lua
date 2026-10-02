@@ -23,6 +23,9 @@ return {
 		config = function()
 			require("telescope").setup({})
 
+			-- Load fzf-native extension
+			pcall(require("telescope").load_extension, "fzf")
+
 			local preview_utils = require("telescope.previewers.utils")
 
 			preview_utils.ts_highlighter = function(bufnr, ft)

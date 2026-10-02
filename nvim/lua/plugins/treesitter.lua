@@ -4,9 +4,10 @@ return {
 		"nvim-treesitter/nvim-treesitter",
 		lazy = false,
 		build = ":TSUpdate",
+		branch = "master",
 
-		init = function()
-			local parsers = {
+		opts = {
+			ensure_installed = {
 				"c",
 				"cpp",
 				"lua",
@@ -27,33 +28,13 @@ return {
 				"markdown_inline",
 				"gitignore",
 				"odin",
-			}
+			},
+			auto_install = true,
+			highlight = { enable = true },
+		},
 
-			local group = vim.api.nvim_create_augroup("Treesitter", { clear = true })
-
-			-- Start Treesitter highlighting automatically
-			vim.api.nvim_create_autocmd({ "BufEnter", "FileType" }, {
-				group = group,
-
-				callback = function()
-					if vim.bo.buftype ~= "" then
-						return
-					end
-
-					pcall(vim.treesitter.start, 0)
-				end,
-			})
-
-			-- Install parsers after Neovim has loaded
-			vim.api.nvim_create_autocmd("User", {
-				group = group,
-				pattern = "VeryLazy",
-				once = true,
-
-				callback = function()
-					require("nvim-treesitter").install(parsers)
-				end,
-			})
+		config = function(_, opts)
+			require("nvim-treesitter.configs").setup(opts)
 		end,
 	},
 
