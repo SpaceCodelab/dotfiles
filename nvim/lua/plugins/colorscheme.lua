@@ -15,8 +15,7 @@ return {
 			require("darkrose").setup({
 				styles = { bold = true, italic = true, underline = true },
 			})
-            ColorMyPencils()
+			ColorMyPencils()
 		end,
-	}, 
-
+	},
 }

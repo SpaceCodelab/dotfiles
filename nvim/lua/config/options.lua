@@ -5,6 +5,10 @@ vim.opt.cursorline = true
 
 vim.g.netrw_banner = 0
 
+vim.opt.wrap = true
+vim.opt.linebreak = true
+vim.opt.list = true
+
 -- Line numbers
 vim.opt.nu = true
 vim.opt.relativenumber = true
