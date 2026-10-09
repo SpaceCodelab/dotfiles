@@ -74,6 +74,12 @@ return {
 			vim.lsp.enable("clangd")
 
 			----------------------------------------------------------------
+			-- Assembly (NASM / GAS)
+			----------------------------------------------------------------
+
+			vim.lsp.enable("asm_lsp")
+
+			----------------------------------------------------------------
 			-- Python
 			----------------------------------------------------------------
 
@@ -210,11 +216,36 @@ return {
 				group = vim.api.nvim_create_augroup("UserLspConfig", { clear = true }),
 				callback = function(ev)
 					local opts = { buffer = ev.buf, noremap = true, silent = true }
-					vim.keymap.set("n", "gd", vim.lsp.buf.definition, vim.tbl_extend("force", opts, { desc = "Go to definition" }))
-					vim.keymap.set("n", "gr", vim.lsp.buf.references, vim.tbl_extend("force", opts, { desc = "Go to references" }))
-					vim.keymap.set("n", "K", vim.lsp.buf.hover, vim.tbl_extend("force", opts, { desc = "Hover documentation" }))
-					vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, vim.tbl_extend("force", opts, { desc = "Rename symbol" }))
-					vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, vim.tbl_extend("force", opts, { desc = "Code action" }))
+					vim.keymap.set(
+						"n",
+						"gd",
+						vim.lsp.buf.definition,
+						vim.tbl_extend("force", opts, { desc = "Go to definition" })
+					)
+					vim.keymap.set(
+						"n",
+						"gr",
+						vim.lsp.buf.references,
+						vim.tbl_extend("force", opts, { desc = "Go to references" })
+					)
+					vim.keymap.set(
+						"n",
+						"K",
+						vim.lsp.buf.hover,
+						vim.tbl_extend("force", opts, { desc = "Hover documentation" })
+					)
+					vim.keymap.set(
+						"n",
+						"<leader>rn",
+						vim.lsp.buf.rename,
+						vim.tbl_extend("force", opts, { desc = "Rename symbol" })
+					)
+					vim.keymap.set(
+						"n",
+						"<leader>ca",
+						vim.lsp.buf.code_action,
+						vim.tbl_extend("force", opts, { desc = "Code action" })
+					)
 				end,
 			})
 		end,

@@ -28,6 +28,7 @@ return {
 				"markdown_inline",
 				"gitignore",
 				"odin",
+				"asm",
 			},
 			auto_install = true,
 			highlight = { enable = true },
