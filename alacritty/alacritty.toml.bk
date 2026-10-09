@@ -1,0 +1,34 @@
+[general]
+import = [
+    "~/.config/alacritty/themes/themes/linux.toml"
+]
+
+[window]
+# padding = { x = 4, y = 4 }
+opacity = 1
+
+[font]
+size = 13
+
+[font.normal]
+family = "JetBrains Mono"
+style = "Medium"
+
+[font.bold]
+family = "JetBrains Mono"
+style = "Bold"
+
+[font.italic]
+family = "JetBrains Mono"
+style = "Italic"
+
+[font.bold_italic]
+family = "JetBrains Mono"
+style = "Bold Italic"
+
+[cursor]
+style = { shape = "Beam", blinking = "On" }
+
+[scrolling]
+history = 10000
+
