@@ -9,6 +9,14 @@ vim.opt.wrap = true
 vim.opt.linebreak = true
 vim.opt.list = false
 
+-- better yanking
+vim.opt.clipboard = "unnamedplus"
+vim.api.nvim_create_autocmd("TextYankPost", {
+	callback = function()
+		vim.highlight.on_yank()
+	end,
+})
+
 -- Line numbers
 vim.opt.nu = true
 vim.opt.relativenumber = true
@@ -22,8 +30,9 @@ vim.opt.expandtab = true
 vim.opt.smartindent = true
 
 -- Editing
-vim.opt.wrap = false
 vim.opt.colorcolumn = "80"
+vim.opt.ignorecase = true
+vim.opt.smartcase = true
 
 -- Files / undo
 vim.opt.swapfile = false
@@ -36,7 +45,7 @@ vim.opt.hlsearch = false
 vim.opt.incsearch = true
 
 -- Scrolling
-vim.opt.scrolloff = 8
+vim.opt.scrolloff = 10
 
 -- Performance
 vim.opt.updatetime = 50
@@ -47,3 +56,18 @@ vim.opt.isfname:append("@-@")
 -- Floating windows / completion
 vim.opt.pumblend = 0
 vim.opt.winblend = 0
+
+vim.keymap.set("n", "<leader>t", ":vsplit | terminal<CR>")
+vim.opt.splitright = true
+
+-- snippets
+vim.cmd([[
+    iabbrev @@ your@gmail.com
+]])
+
+-- move lines around
+vim.keymap.set("n", "<C-j>", ":m .+1<CR>>==")
+vim.keymap.set("n", "<C-k>", ":m .-2<CR>>==")
+
+-- execute files
+vim.keymap.set("n", "<leader>ecp", ":w<CR>:!g++ -o %:r && ./%:r<CR>")
