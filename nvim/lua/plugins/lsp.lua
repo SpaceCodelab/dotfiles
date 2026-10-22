@@ -5,6 +5,7 @@ return {
 		dependencies = {
 			"williamboman/mason.nvim",
 			"williamboman/mason-lspconfig.nvim",
+			"onsails/lspkind.nvim",
 
 			-- Completion
 			"hrsh7th/nvim-cmp",
@@ -20,6 +21,22 @@ return {
 			-- LSP progress
 			"j-hui/fidget.nvim",
 		},
+
+		config = function()
+			local cmp = require("cmp")
+			local lspkind = require("lspkind")
+
+			cmp.setup({
+				formatting = {
+					format = lspkind.cmp_format({
+						mode = "symbol_text", -- show symbol and text
+						maxwidth = 50,
+						ellipsis_char = "...",
+						show_labelDetails = true, -- show label details in popup (e.g., origin)
+					}),
+				},
+			})
+		end,
 
 		config = function()
 			local cmp = require("cmp")
