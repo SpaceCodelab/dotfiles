@@ -7,7 +7,7 @@ function ColorMyPencils(color)
 end
 
 return {
-	{
+	--[[{
 		"water-sucks/darkrose.nvim",
 		lazy = false,
 		priority = 1000,
@@ -16,6 +16,15 @@ return {
 				styles = { bold = true, italic = true, underline = true },
 			})
 			ColorMyPencils()
+		end,
+	},]]
+	{
+		"harshrajsachan/omni.nvim",
+		lazy = false,
+		priority = 1000,
+
+		config = function()
+			vim.cmd("colorscheme omni-blackout")
 		end,
 	},
 }
