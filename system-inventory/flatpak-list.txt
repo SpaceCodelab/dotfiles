@@ -1,0 +1,33 @@
+com.github.tchx84.Flatseal	Flatseal	2.4.1	stable	flathub
+com.usebottles.bottles	Bottles	67.3	stable	flathub
+org.freedesktop.Platform	Freedesktop Platform	freedesktop-sdk-25.08.17	25.08	flathub
+org.freedesktop.Platform.Compat.i386	i386		25.08	flathub
+org.freedesktop.Platform.GL.default	Mesa	26.2.2	25.08	flathub
+org.freedesktop.Platform.GL.default	Mesa (Extra)	26.2.2	25.08-extra	flathub
+org.freedesktop.Platform.GL.default	Mesa	26.2.5	26.08	flathub
+org.freedesktop.Platform.GL.default	Mesa (Extra)	26.2.5	26.08-extra	flathub
+org.freedesktop.Platform.GL.nvidia-580-159-04	nvidia-580-159-04		1.4	flathub
+org.freedesktop.Platform.GL.nvidia-610-57-04	nvidia-610-57-04		1.4	flathub
+org.freedesktop.Platform.GL.nvidia-615-78-08	nvidia-615-78-08		1.4	flathub
+org.freedesktop.Platform.GL32.default	Mesa	26.1.6	25.08	flathub
+org.freedesktop.Platform.GL32.default	Mesa (Extra)	26.1.6	25.08-extra	flathub
+org.freedesktop.Platform.GL32.nvidia-580-159-04	nvidia-580-159-04		1.4	flathub
+org.freedesktop.Platform.GL32.nvidia-610-57-04	nvidia-610-57-04		1.4	flathub
+org.freedesktop.Platform.VAAPI.Intel	Intel VAAPI driver		25.08	flathub
+org.freedesktop.Platform.VAAPI.Intel	Intel VAAPI driver		26.08	flathub
+org.freedesktop.Platform.VAAPI.Intel.i386	i386		25.08	flathub
+org.freedesktop.Platform.VAAPI.nvidia	Nvidia VAAPI driver		25.08	flathub
+org.freedesktop.Platform.VAAPI.nvidia	Nvidia VAAPI driver		26.08	flathub
+org.freedesktop.Platform.VAAPI.nvidia.i386	i386		25.08	flathub
+org.freedesktop.Platform.VulkanLayer.HdrWsi	Vulkan HDR WSI Layer	r47.303e0c6	25.08	flathub
+org.freedesktop.Platform.codecs-extra	Codecs Extra Extension		25.08-extra	flathub
+org.freedesktop.Platform.codecs-extra	Codecs Extra Extension		26.08-extra	flathub
+org.freedesktop.Platform.codecs_extra.i386	i386		25.08-extra	flathub
+org.gnome.Platform	GNOME Application Platform version 49		49	flathub
+org.gnome.Platform	GNOME Application Platform version 50		50	flathub
+org.gnome.Platform	GNOME Application Platform version 51		51	flathub
+org.gtk.Gtk3theme.Adwaita-dark	Adwaita dark GTK theme		3.22	flathub
+org.onlyoffice.desktopeditors	ONLYOFFICE Desktop Editors	9.4.0	stable	flathub
+org.telegram.desktop	Telegram	7.3.3	stable	flathub
+org.winehq.Wine.gecko	gecko		stable-25.08	flathub
+org.winehq.Wine.mono	mono		stable-25.08	flathub
