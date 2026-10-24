@@ -6,33 +6,11 @@ x = 6
 
 [font]
 # normal = { family = "Iosevka Nerd Font Mono", style = "Regular" }
-normal = { family = "Iosevka Nerd Font Mono", style = "Medium" }
+normal = { family = "Iosevka Nerd Font Mono", style = "Regular" }
 # size = 20
 size = 13
 
-
-[colors.primary]
-background = "#000000"
-foreground = "#c1c1c1"
-
-[colors.normal]
-black   = "#000000"
-red     = "#5f8787"
-green   = "#dd9999"
-yellow  = "#a06666"
-blue    = "#888888"
-magenta = "#999999"
-cyan    = "#aaaaaa"
-white   = "#c1c1c1"
-
-[colors.bright]
-black   = "#333333"
-red     = "#5f8787"
-green   = "#dd9999"
-yellow  = "#a06666"
-blue    = "#888888"
-magenta = "#999999"
-cyan    = "#aaaaaa"
-white   = "#ffffff"
-
-
+[general]
+import = [
+    "~/.config/alacritty/themes/themes/gruvbox_material_hard_dark.toml"
+]
