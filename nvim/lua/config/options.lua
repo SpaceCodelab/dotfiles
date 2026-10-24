@@ -71,3 +71,6 @@ vim.keymap.set("n", "<C-k>", ":m .-2<CR>>==")
 
 -- execute files
 vim.keymap.set("n", "<leader>ecp", ":w<CR>:!g++ -o %:r && ./%:r<CR>")
+
+vim.opt.grepformat = "%f:%l:%c:%m"
+vim.opt.grepprg = "rg --vimgrep --no-messages --smart-case"
